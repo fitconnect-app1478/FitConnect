@@ -39,25 +39,25 @@ FitConnect is a web-based fitness meetup platform developed as a Minimum Viable 
 ## Project Structure
 
 FitConnect/
-│
-├── assets/
-├── database/
-├── includes/
-├── uploads/
-├── config.php
-├── index.php
-├── login.php
-├── register.php
-├── dashboard.php
-├── events.php
-├── create_event.php
-├── edit_event.php
-├── delete_event.php
-├── event_details.php
-├── rsvp.php
-├── notifications.php
-├── profile.php
-└── README.md
+
+| Folder/File         | Purpose                    |
+| ------------------- | -------------------------- |
+| `assets/`           | CSS, JavaScript and Images |
+| `database/`         | SQL database file          |
+| `includes/`         | Shared PHP components      |
+| `uploads/`          | Uploaded files             |
+| `config.php`        | Database configuration     |
+| `dashboard.php`     | User dashboard             |
+| `events.php`        | Event listing              |
+| `create_event.php`  | Create event               |
+| `edit_event.php`    | Edit event                 |
+| `delete_event.php`  | Delete event               |
+| `event_details.php` | Event information          |
+| `rsvp.php`          | RSVP management            |
+| `notifications.php` | Notification system        |
+| `profile.php`       | User profile               |
+| `README.md`         | Project documentation      |
+
 
 
 ## Installation
