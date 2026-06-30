@@ -128,7 +128,23 @@ Upcoming Sessions
 
 <div class="stat-number">
 
-0
+<?php
+
+$stmt = $conn->prepare("
+SELECT COUNT(*) AS total
+FROM notifications
+WHERE user_id=?
+AND is_read=0
+");
+
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+
+$totalNotifications = $stmt->get_result()->fetch_assoc()['total'];
+
+echo $totalNotifications;
+
+?>
 
 </div>
 

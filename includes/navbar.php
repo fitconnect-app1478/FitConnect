@@ -2,11 +2,20 @@
 
 <div class="container">
 
-<a class="navbar-brand fw-bold" href="index.php">
+<a class="navbar-brand d-flex align-items-center" href="index.php">
 
-<i class="fa-solid fa-dumbbell"></i>
+    <img
+        src="assets/images/logo.png"
+        alt="FitConnect Logo"
+        width="45"
+        height="45"
+        class="me-2">
 
-FitConnect
+    <span class="fw-bold fs-4 text-white">
+
+        FitConnect
+
+    </span>
 
 </a>
 
@@ -27,31 +36,31 @@ data-bs-target="#navbarNav">
 
 <li class="nav-item">
 <a class="nav-link" href="dashboard.php">
-Dashboard
+<i class="fa-solid fa-house me-1"></i> Dashboard
 </a>
 </li>
 
 <li class="nav-item">
 <a class="nav-link" href="events.php">
-Events
+<i class="fa-solid fa-calendar-days me-1"></i> Events
 </a>
 </li>
 
 <li class="nav-item">
 <a class="nav-link" href="profile.php">
-Profile
+<i class="fa-solid fa-user me-1"></i> Profile
 </a>
 </li>
 
 <li class="nav-item">
 <a class="nav-link" href="notifications.php">
-Notifications
+<i class="fa-solid fa-bell me-1"></i> Notifications
 </a>
 </li>
 
 <li class="nav-item">
 <a class="nav-link text-warning" href="logout.php">
-Logout
+<i class="fa-solid fa-right-from-bracket me-1"></i> Logout
 </a>
 </li>
 
