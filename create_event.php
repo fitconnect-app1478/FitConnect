@@ -39,12 +39,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
 
-            header("Location: events.php?success=1");
-            exit();
+    $_SESSION['toast'] = [
+        'type' => 'success',
+        'message' => 'Event created successfully.'
+    ];
 
-        }
+    header("Location: events.php");
+    exit();
 
-        $stmt->close();
+} else {
+
+    $message = "Error creating event.";
+
+}
+
+$stmt->close();
+
     } else {
         $message = "Please fill all fields.";
     }
@@ -105,8 +115,6 @@ class="form-control"
 required>
 
 </div>
-
-<div class="mb-3">
 
 <div class="mb-3">
 

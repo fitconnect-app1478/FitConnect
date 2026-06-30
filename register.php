@@ -54,7 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($stmt->execute()) {
 
-                header("Location: login.php?registered=1");
+                $_SESSION['toast'] = [
+                   'type' => 'success',
+                   'message' => 'Registration successful. Please login.'
+                ];
+
+                header("Location: login.php");
                 exit();
 
             } else {

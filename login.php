@@ -1,14 +1,6 @@
 <?php
 include 'config.php';
 
-$message = "";
-$messageType = "";
-
-if (isset($_GET['registered'])) {
-    $message = "Registration successful. Please login.";
-    $messageType = "success";
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = trim($_POST['email']);
@@ -16,8 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($email) || empty($password)) {
 
-        $message = "Please enter email and password.";
-        $messageType = "danger";
+            $_SESSION['toast'] = [
+              'type' => 'warning',
+              'message' => 'Please enter email and password.'
+            ];
+
+            header("Location: login.php");
+            exit();
 
     } else {
 
@@ -41,15 +38,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             } else {
 
-                $message = "Incorrect password.";
-                $messageType = "danger";
+            $_SESSION['toast'] = [
+               'type' => 'danger',
+               'message' => 'Incorrect password.'
+            ];
+
+            header("Location: login.php");
+            exit();
 
             }
 
         } else {
 
-            $message = "Email not found.";
-            $messageType = "danger";
+            $_SESSION['toast'] = [
+               'type' => 'danger',
+               'message' => 'Email not found.'
+            ];
+            
+            header("Location: login.php");
+            exit();
 
         }
 
@@ -76,16 +83,6 @@ include 'includes/navbar.php';
 Login
 
 </h2>
-
-<?php if($message!=""){ ?>
-
-<div class="alert alert-<?php echo $messageType; ?>">
-
-<?php echo $message; ?>
-
-</div>
-
-<?php } ?>
 
 <form method="POST">
 

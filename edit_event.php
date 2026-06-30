@@ -54,8 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if ($update->execute()) {
-        header("Location: events.php?updated=1");
+        $_SESSION['toast'] = [
+        'type' => 'success',
+        'message' => 'Event updated successfully.'
+        ];
+
+        header("Location: events.php");
         exit();
+        
     } else {
         $message = "Unable to update event.";
     }
