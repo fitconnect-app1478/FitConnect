@@ -23,21 +23,59 @@ data-bs-target="#navbarNav">
 
 <ul class="navbar-nav ms-auto">
 
+<?php if(isset($_SESSION['user_id'])){ ?>
+
 <li class="nav-item">
-<a class="nav-link" href="index.php">Home</a>
+<a class="nav-link" href="dashboard.php">
+Dashboard
+</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="events.php">Events</a>
+<a class="nav-link" href="events.php">
+Events
+</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="register.php">Register</a>
+<a class="nav-link" href="profile.php">
+Profile
+</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="login.php">Login</a>
+<a class="nav-link" href="notifications.php">
+Notifications
+</a>
 </li>
+
+<li class="nav-item">
+<a class="nav-link text-warning" href="logout.php">
+Logout
+</a>
+</li>
+
+<?php } else { ?>
+
+<li class="nav-item">
+<a class="nav-link" href="index.php">
+Home
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="register.php">
+Register
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="login.php">
+Login
+</a>
+</li>
+
+<?php } ?>
 
 </ul>
 
