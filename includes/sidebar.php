@@ -14,6 +14,13 @@ class="list-group-item list-group-item-action">
 
 </a>
 
+<a href="create_event.php"
+class="list-group-item list-group-item-action">
+
+➕ Create Event
+
+</a>
+
 <a href="profile.php"
 class="list-group-item list-group-item-action">
 

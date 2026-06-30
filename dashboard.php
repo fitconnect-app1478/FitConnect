@@ -105,7 +105,15 @@ Notifications
 
 </div>
 
+<div class="mt-4">
+    <a href="create_event.php" class="btn btn-success">
+        <i class="fa-solid fa-plus"></i> Create New Event
+    </a>
+</div>
+
 <div class="card shadow mt-4">
+    
+</div>
 
 <div class="card-body">
 
