@@ -114,3 +114,23 @@ footer{
     color:#22c55e;
 
 }
+
+.card{
+
+    border:none;
+
+}
+
+.form-control{
+
+    padding:12px;
+
+    border-radius:10px;
+
+}
+
+.btn{
+
+    border-radius:10px;
+
+}
