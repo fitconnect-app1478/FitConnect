@@ -39,6 +39,35 @@ if($result->num_rows==0){
 
 $event=$result->fetch_assoc();
 
+$rsvp = $conn->prepare("
+SELECT status
+FROM rsvp
+WHERE user_id=?
+AND event_id=?
+");
+
+$rsvp->bind_param(
+    "ii",
+    $_SESSION['user_id'],
+    $event_id
+);
+
+$rsvp->execute();
+
+$rsvpResult = $rsvp->get_result();
+
+$joined = false;
+
+if($rsvpResult->num_rows>0){
+
+    $status = $rsvpResult->fetch_assoc();
+
+    if($status['status']=="Joined"){
+        $joined = true;
+    }
+
+}
+
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>
@@ -119,6 +148,20 @@ include 'includes/navbar.php';
 
 <div class="d-flex gap-2">
 
+<?php if($joined){ ?>
+
+<a
+href="rsvp.php?id=<?php echo $event['event_id']; ?>"
+class="btn btn-danger">
+
+<i class="fa-solid fa-xmark"></i>
+
+Cancel RSVP
+
+</a>
+
+<?php }else{ ?>
+
 <a
 href="rsvp.php?id=<?php echo $event['event_id']; ?>"
 class="btn btn-success">
@@ -128,6 +171,8 @@ class="btn btn-success">
 Join Event
 
 </a>
+
+<?php } ?>
 
 <a
 href="events.php"
