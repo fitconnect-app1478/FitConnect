@@ -30,19 +30,21 @@ $result = $conn->query($sql);
 
 </div>
 
-<?php
-if(isset($_GET['success'])){
-?>
+<?php if(isset($_GET['success'])){ ?>
 
 <div class="alert alert-success">
-
-Event created successfully.
-
+    Event created successfully.
 </div>
 
-<?php
-}
-?>
+<?php } ?>
+
+<?php if(isset($_GET['updated'])){ ?>
+
+<div class="alert alert-success">
+    Event updated successfully.
+</div>
+
+<?php } ?>
 
 <div class="row">
 
